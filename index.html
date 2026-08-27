@@ -5,22 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="xupy6 的个人主页，展示 Agent、LLM、AI4S、全栈 Web 和可交互式 AI 产品项目。"
+      content="xupy 的个人主页，展示 Agent、LLM、AI4S、全栈 Web 与可交互式 AI 产品方向。"
     />
-    <title>xupy6 | Agent Developer</title>
+    <title>xupy | Agent Developer</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="ambient ambient-a"></div>
     <div class="ambient ambient-b"></div>
+
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="xupy6 homepage">
+      <a class="brand" href="#top" aria-label="xupy homepage">
         <span class="window-dots" aria-hidden="true">
           <i></i><i></i><i></i>
         </span>
-        <span>xupy6</span>
+        <span>xupy</span>
       </a>
+
+      <div class="music-box-player" id="musicBox" title="真实音乐播放器">
+        <button class="music-control" id="prevTrack" type="button" aria-label="上一首">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button class="music-control music-control-main" id="toggleMusic" type="button" aria-label="播放">
+          <span id="playIcon" aria-hidden="true">▶</span>
+        </button>
+        <button class="music-control" id="nextTrack" type="button" aria-label="下一首">
+          <span aria-hidden="true">›</span>
+        </button>
+        <input class="music-progress" id="musicProgress" type="range" min="0" max="100" value="0" aria-label="播放进度" />
+        <span class="music-title" id="musicTitle">SoundHelix 1</span>
+        <span class="music-box-disc" id="musicDisc" aria-hidden="true"></span>
+      </div>
+
       <nav class="nav" aria-label="Primary navigation">
+        <span class="nav-liquid" aria-hidden="true"></span>
         <a href="#stack">Tech Stack</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -37,40 +55,19 @@
             应用、AI4S 和可交互式 AI 产品。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://github.com/xupy6" target="_blank" rel="noreferrer">
-              View GitHub
-            </a>
-            <a class="button secondary" href="#projects">Featured Projects</a>
+            <a class="button primary" href="https://github.com/xupy6" target="_blank" rel="noreferrer">View GitHub</a>
+            <a class="button secondary" href="#projects">项目列表</a>
           </div>
         </div>
 
-        <aside class="hero-panel glass" aria-label="Profile highlights">
-          <div class="panel-orbit"></div>
-          <div class="profile-card">
-            <div class="avatar">XP</div>
-            <div>
-              <p class="muted">Builder Profile</p>
-              <h2>xupy6</h2>
-            </div>
-          </div>
-          <div class="signal-grid">
-            <div>
-              <span>Agent</span>
-              <strong>LangGraph</strong>
-            </div>
-            <div>
-              <span>Full Stack</span>
-              <strong>React + FastAPI</strong>
-            </div>
-            <div>
-              <span>AI Product</span>
-              <strong>RAG / OCR / ASR</strong>
-            </div>
-            <div>
-              <span>Data</span>
-              <strong>NumPy + Pandas</strong>
-            </div>
-          </div>
+        <aside class="hero-panel glass" aria-label="Profile intro">
+          <div class="profile-glow"></div>
+          <p class="eyebrow">简介</p>
+          <h2>xupy</h2>
+          <p>
+            我喜欢把 LLM 能力拆进真实产品流程里：从 Agent 编排、RAG、OCR/ASR、多模态处理，到
+            React 与 FastAPI 的前后端联调。更关注能被用户真正点开、上传、分析、对话和复用的 AI 应用。
+          </p>
         </aside>
       </section>
 
@@ -124,8 +121,8 @@
 
       <section id="projects" class="section projects">
         <div class="section-heading">
-          <p class="eyebrow">Featured Projects</p>
-          <h2>代表项目</h2>
+          <p class="eyebrow">Projects</p>
+          <h2>项目列表</h2>
         </div>
 
         <div class="project-grid">
@@ -136,7 +133,7 @@
             </div>
             <h3>AutoFin</h3>
             <p>
-              面向金融场景的自动化分析项目，聚合数据处理、策略分析与可视化流程，辅助快速完成金融数据洞察和报告生成。
+              面向金融场景的自动化分析项目，聚合数据处理、策略分析和可视化流程，用于快速完成金融数据洞察与报告生成。
             </p>
           </article>
 
@@ -156,19 +153,19 @@
       <section id="contact" class="section contact glass">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>一起做点有意思的 AI 产品</h2>
-          <p>欢迎交流 Agent、LLM 应用、AI4S、全栈工程和可交互式 AI 产品。</p>
+          <h2>欢迎交流</h2>
+          <p>欢迎交流。</p>
         </div>
         <div class="contact-links">
           <a href="https://github.com/xupy6" target="_blank" rel="noreferrer">GitHub</a>
           <a href="mailto:xupy666@gmail.com">Email</a>
-          <a href="https://github.com/xupy6/relation-slice" target="_blank" rel="noreferrer">Relation Slice</a>
+          <a href="tencent://message/?uin=2788637607&Site=&Menu=yes">QQ：2788637607</a>
         </div>
       </section>
     </main>
 
     <footer>
-      <span>Designed and built for xupy6.</span>
+      <span>Designed and built for xupy. Music by SoundHelix.</span>
       <a href="#top">Back to top</a>
     </footer>
 
