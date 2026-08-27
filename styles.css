@@ -77,7 +77,7 @@ a {
   display: grid;
   width: min(1480px, calc(100% - 20px));
   min-height: 58px;
-  grid-template-columns: minmax(130px, 1fr) auto;
+  grid-template-columns: minmax(130px, 1fr) auto minmax(330px, 1fr);
   gap: 16px;
   align-items: center;
   padding: 8px 10px 8px 18px;
@@ -182,6 +182,131 @@ a {
 .nav a.active {
   color: var(--text);
   transform: translateY(-1px);
+}
+
+.music-box-player {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  width: 210px;
+  height: 32px;
+  align-items: center;
+  justify-self: center;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 999px;
+  padding: 5px 35px 5px 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(244, 245, 247, 0.52)),
+    radial-gradient(circle at 26% 20%, rgba(255, 255, 255, 0.98), transparent 34%);
+  box-shadow:
+    0 14px 36px rgba(30, 34, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.music-box-player::before {
+  position: absolute;
+  inset: -3px;
+  z-index: 0;
+  content: "";
+  border-radius: 999px;
+  padding: 2px;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0.32),
+    rgba(255, 88, 146, 0.86),
+    rgba(255, 214, 92, 0.78),
+    rgba(78, 214, 118, 0.76),
+    rgba(90, 200, 250, 0.78),
+    rgba(190, 128, 255, 0.74),
+    rgba(255, 255, 255, 0.32)
+  );
+  background-size: 320% 100%;
+  opacity: 0;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.music-box-playing::before {
+  opacity: 0.9;
+  animation: musicBorderShift 4.8s ease-in-out infinite, musicHue 7.2s ease-in-out infinite;
+}
+
+.music-box-player > * {
+  position: relative;
+  z-index: 2;
+}
+
+.music-box-disabled {
+  opacity: 0.62;
+}
+
+.music-control {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  place-items: center;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(54, 59, 69, 0.72);
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.music-control:hover,
+.music-control-main {
+  background: rgba(255, 255, 255, 0.72);
+  color: rgba(18, 22, 30, 0.88);
+  transform: translateY(-1px);
+}
+
+.music-control-main {
+  box-shadow:
+    0 4px 12px rgba(30, 34, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+.music-progress {
+  width: 50px;
+  height: 3px;
+  flex: 0 0 50px;
+  accent-color: #8e8e93;
+  cursor: pointer;
+}
+
+.music-title {
+  max-width: 54px;
+  overflow: hidden;
+  color: rgba(70, 78, 92, 0.86);
+  font-size: 11px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.music-box-disc {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(248, 249, 251, 0.96) 0 13%, rgba(20, 22, 26, 0.9) 14% 26%, transparent 27%),
+    repeating-radial-gradient(circle, #15171b 0 2px, #2b2e35 3px 4px, #090a0d 5px 6px);
+  box-shadow:
+    0 6px 14px rgba(10, 12, 16, 0.24),
+    inset 0 1px 2px rgba(255, 255, 255, 0.22);
+}
+
+.music-box-disc-active {
+  animation: musicSpin 2.4s linear infinite;
 }
 
 main {
@@ -500,10 +625,42 @@ footer {
   }
 }
 
+@keyframes musicSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes musicHue {
+  0%,
+  100% {
+    filter: saturate(118%) hue-rotate(0deg);
+  }
+
+  50% {
+    filter: saturate(132%) hue-rotate(28deg);
+  }
+}
+
+@keyframes musicBorderShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @media (max-width: 980px) {
   .site-header {
     grid-template-columns: auto 1fr;
     border-radius: 28px;
+  }
+
+  .music-box-player {
+    display: none;
   }
 
   .nav {
@@ -601,7 +758,8 @@ footer {
   .site-header,
   .glass,
   .skill-card,
-  .nav {
+  .nav,
+  .music-box-player {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
     border-color: rgba(255, 255, 255, 0.14);
     box-shadow: 0 18px 52px rgba(0, 0, 0, 0.24);
@@ -632,6 +790,16 @@ footer {
   .nav a,
   .hero-panel p:not(.eyebrow) {
     color: #c2c9d4;
+  }
+
+  .music-control {
+    color: rgba(244, 247, 251, 0.72);
+  }
+
+  .music-control:hover,
+  .music-control-main {
+    background: rgba(255, 255, 255, 0.14);
+    color: rgba(244, 247, 251, 0.92);
   }
 
 }

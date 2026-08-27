@@ -22,6 +22,21 @@
         <span>xupy</span>
       </a>
 
+      <div class="music-box-player music-box-disabled" id="musicBox" title="音乐播放器">
+        <button class="music-control" id="prevTrack" type="button" aria-label="上一首">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button class="music-control music-control-main" id="toggleMusic" type="button" aria-label="播放">
+          <span id="playIcon" aria-hidden="true">▶</span>
+        </button>
+        <button class="music-control" id="nextTrack" type="button" aria-label="下一首">
+          <span aria-hidden="true">›</span>
+        </button>
+        <input class="music-progress" id="musicProgress" type="range" min="0" max="100" value="0" aria-label="播放进度" />
+        <span class="music-title" id="musicTitle">Music</span>
+        <span class="music-box-disc" id="musicDisc" aria-hidden="true"></span>
+      </div>
+
       <nav class="nav" aria-label="Primary navigation">
         <span class="nav-liquid" aria-hidden="true"></span>
         <a href="#stack">Tech Stack</a>
