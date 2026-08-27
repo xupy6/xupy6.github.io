@@ -499,134 +499,17 @@ h3 {
 }
 
 .stack-wall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 34px;
   border-radius: 34px;
-  padding: 30px;
-  overflow: hidden;
+  padding: 36px;
 }
 
-.tech-icon-grid {
-  display: grid;
-  grid-template-columns: repeat(10, minmax(74px, 1fr));
-  gap: 12px;
-  width: 100%;
-}
-
-.tech-icon {
-  position: relative;
-  display: grid;
-  min-height: 88px;
-  place-items: center;
-  gap: 7px;
-  padding: 12px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.74);
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.88), transparent 38%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.3));
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.86),
-    0 16px 34px rgba(75, 84, 96, 0.08);
-  color: #1d2430;
-  overflow: hidden;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
-}
-
-.tech-icon::before {
-  content: "";
-  position: absolute;
-  inset: -36%;
-  background: linear-gradient(120deg, transparent 24%, rgba(255, 255, 255, 0.36) 42%, transparent 60%);
-  transform: translateX(-42%) rotate(12deg);
-  transition: transform 420ms ease;
-}
-
-.tech-icon:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.95);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.92),
-    0 22px 44px rgba(75, 84, 96, 0.12);
-}
-
-.tech-icon:hover::before {
-  transform: translateX(42%) rotate(12deg);
-}
-
-.tech-icon b,
-.tech-icon em {
-  position: relative;
-  z-index: 1;
-}
-
-.tech-icon b {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border-radius: 13px;
-  background:
-    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.92), transparent 42%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(245, 247, 251, 0.42));
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.86),
-    0 10px 22px rgba(84, 94, 108, 0.12);
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0;
-}
-
-.tech-icon em {
-  color: #5a6370;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.1;
-  text-align: center;
-}
-
-.tech-icon.python { background: linear-gradient(145deg, rgba(224, 237, 255, 0.76), rgba(255, 249, 213, 0.38)); }
-.tech-icon.javascript { background: linear-gradient(145deg, rgba(255, 242, 166, 0.68), rgba(255, 255, 255, 0.34)); }
-.tech-icon.typescript { background: linear-gradient(145deg, rgba(199, 222, 255, 0.72), rgba(255, 255, 255, 0.35)); }
-.tech-icon.node { background: linear-gradient(145deg, rgba(213, 239, 205, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.html { background: linear-gradient(145deg, rgba(255, 219, 198, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.css { background: linear-gradient(145deg, rgba(209, 231, 255, 0.74), rgba(255, 255, 255, 0.34)); }
-.tech-icon.c { background: linear-gradient(145deg, rgba(221, 228, 239, 0.74), rgba(255, 255, 255, 0.34)); }
-.tech-icon.react { background: linear-gradient(145deg, rgba(203, 245, 255, 0.68), rgba(255, 255, 255, 0.34)); }
-.tech-icon.vite { background: linear-gradient(145deg, rgba(239, 221, 255, 0.68), rgba(255, 248, 190, 0.34)); }
-.tech-icon.tailwind { background: linear-gradient(145deg, rgba(202, 244, 246, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.fastapi { background: linear-gradient(145deg, rgba(197, 235, 222, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.flask { background: linear-gradient(145deg, rgba(232, 235, 240, 0.78), rgba(255, 255, 255, 0.34)); }
-.tech-icon.docker { background: linear-gradient(145deg, rgba(203, 225, 255, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.nginx { background: linear-gradient(145deg, rgba(207, 237, 214, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.sqlite { background: linear-gradient(145deg, rgba(219, 235, 247, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.pytorch { background: linear-gradient(145deg, rgba(255, 218, 202, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.opencv { background: linear-gradient(145deg, rgba(219, 226, 255, 0.68), rgba(215, 244, 218, 0.34)); }
-.tech-icon.github { background: linear-gradient(145deg, rgba(229, 232, 238, 0.78), rgba(255, 255, 255, 0.34)); }
-.tech-icon.git { background: linear-gradient(145deg, rgba(255, 224, 211, 0.72), rgba(255, 255, 255, 0.34)); }
-.tech-icon.linux { background: linear-gradient(145deg, rgba(238, 238, 230, 0.78), rgba(255, 255, 255, 0.34)); }
-
-.tech-icon.python b { color: #3178b8; }
-.tech-icon.javascript b { color: #9a7500; }
-.tech-icon.typescript b { color: #2f72bd; }
-.tech-icon.node b { color: #418841; }
-.tech-icon.html b { color: #c75a2a; }
-.tech-icon.css b { color: #3479bd; }
-.tech-icon.c b { color: #5c6980; }
-.tech-icon.react b { color: #199db2; }
-.tech-icon.vite b { color: #8566c9; }
-.tech-icon.tailwind b { color: #1597a4; }
-.tech-icon.fastapi b { color: #16866c; }
-.tech-icon.flask b { color: #4b5360; }
-.tech-icon.docker b { color: #3170c6; }
-.tech-icon.nginx b { color: #27804a; }
-.tech-icon.sqlite b { color: #3f7f9f; }
-.tech-icon.pytorch b { color: #bf6543; }
-.tech-icon.opencv b { color: #5663b7; }
-.tech-icon.github b { color: #303743; }
-.tech-icon.git b { color: #c85f42; }
-.tech-icon.linux b { color: #6f6858; }
+.stack-wall img {
+  width: min(100%, 980px);
+  height: auto;
 }
 
 .skill-groups,
@@ -814,10 +697,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .tech-icon-grid {
-    grid-template-columns: repeat(5, minmax(70px, 1fr));
-  }
-
   .hero {
     min-height: auto;
   }
@@ -857,21 +736,6 @@ footer {
 
   main {
     padding-top: 150px;
-  }
-
-  .stack-wall {
-    padding: 18px;
-    border-radius: 28px;
-  }
-
-  .tech-icon-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .tech-icon {
-    min-height: 76px;
-    border-radius: 20px;
   }
 }
 
@@ -936,29 +800,6 @@ footer {
   .music-control-main {
     background: rgba(255, 255, 255, 0.14);
     color: rgba(244, 247, 251, 0.92);
-  }
-
-  .tech-icon {
-    background:
-      radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.18), transparent 38%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.05));
-    border-color: rgba(255, 255, 255, 0.14);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.16),
-      0 16px 34px rgba(0, 0, 0, 0.18);
-  }
-
-  .tech-icon b {
-    background:
-      radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.24), transparent 42%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      0 10px 22px rgba(0, 0, 0, 0.16);
-  }
-
-  .tech-icon em {
-    color: #c2c9d4;
   }
 
 }
