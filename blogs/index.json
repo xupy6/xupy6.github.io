@@ -1,10 +1,58 @@
 [
   {
-    "name": "2026-08-28-start.md",
-    "path": "./blogs/2026-08-28-start.md",
-    "title": "第一篇开发笔记",
+    "name": "2026-08-28-blog-system.md",
+    "path": "./blogs/2026-08-28-blog-system.md",
+    "title": "给个人主页加一个能长期写的 Notes",
     "date": "2026-08-28",
-    "summary": "记录个人主页博客系统上线，以及后续写作同步方式。",
-    "tags": "Blog, GitHub Pages, Agent"
+    "summary": "个人主页不只放项目链接，也需要一个能持续记录工程细节和想法的地方。",
+    "tags": "GitHub Pages, Notes, Frontend"
+  },
+  {
+    "name": "2026-08-21-ai4s-notes.md",
+    "path": "./blogs/2026-08-21-ai4s-notes.md",
+    "title": "AI4S 里我更关心可复现的小链路",
+    "date": "2026-08-21",
+    "summary": "AI4S 不只是把模型接到科学问题上，数据、实验记录、评估方式和复现实验同样重要。",
+    "tags": "AI4S, Data, Engineering"
+  },
+  {
+    "name": "2026-08-03-agent-ui-latency.md",
+    "path": "./blogs/2026-08-03-agent-ui-latency.md",
+    "title": "做可交互 AI 产品时，等待感要被设计",
+    "date": "2026-08-03",
+    "summary": "Agent 链路很容易慢，前端不能只放一个转圈，进度、阶段文案和可中断状态都要认真处理。",
+    "tags": "Agent, Frontend, Product"
+  },
+  {
+    "name": "2026-07-19-graphrag-first-pass.md",
+    "path": "./blogs/2026-07-19-graphrag-first-pass.md",
+    "title": "GraphRAG 先别急着上大图谱",
+    "date": "2026-07-19",
+    "summary": "GraphRAG 最适合解决关系和主题跳转问题，但如果数据清洗没做好，图谱只会把噪声放大。",
+    "tags": "GraphRAG, Knowledge Graph, RAG"
+  },
+  {
+    "name": "2026-07-05-rag-retrieval.md",
+    "path": "./blogs/2026-07-05-rag-retrieval.md",
+    "title": "RAG 的问题经常不在向量库",
+    "date": "2026-07-05",
+    "summary": "检索增强真正麻烦的地方是切分、排序、过滤和回答时的引用边界，而不是换一个更贵的 embedding。",
+    "tags": "RAG, LLM, Retrieval"
+  },
+  {
+    "name": "2026-06-23-skills-notes.md",
+    "path": "./blogs/2026-06-23-skills-notes.md",
+    "title": "Skills 更像是给自己留操作手册",
+    "date": "2026-06-23",
+    "summary": "Skill 不应该写成百科，真正有用的是把偏好、流程和容易忘的细节固定下来。",
+    "tags": "Skills, Codex, Workflow"
+  },
+  {
+    "name": "2026-06-09-agent-state.md",
+    "path": "./blogs/2026-06-09-agent-state.md",
+    "title": "Agent 编排先把状态想清楚",
+    "date": "2026-06-09",
+    "summary": "做多 Agent 时，最先出问题的通常不是模型，而是状态字段、节点边界和失败后的恢复方式。",
+    "tags": "Agent, LangGraph, Engineering"
   }
 ]
