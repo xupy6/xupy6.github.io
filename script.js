@@ -1,11 +1,33 @@
 const nav = document.querySelector(".nav");
 const navLiquid = document.querySelector(".nav-liquid");
 const navLinks = Array.from(document.querySelectorAll(".nav a"));
-const sections = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
+const sectionLinks = navLinks.filter((link) => link.getAttribute("href")?.startsWith("#"));
+const sections = sectionLinks
+  .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
+  .filter((item) => item.section);
 
-let activeIndex = 0;
+let activeIndex = Math.max(
+  0,
+  navLinks.findIndex((link) => link.classList.contains("active")),
+);
+
+function getNavIndex(link) {
+  return Math.max(0, navLinks.indexOf(link));
+}
+
+const localPagePath = window.location.pathname.split("/").pop() || "index.html";
+const pageIndex = navLinks.findIndex((link) => {
+  const href = link.getAttribute("href") || "";
+  return href.includes(localPagePath) && !href.startsWith("#");
+});
+
+if (pageIndex >= 0 && localPagePath !== "index.html") {
+  activeIndex = pageIndex;
+}
+
+navLinks.forEach((link, index) => {
+  link.classList.toggle("active", index === activeIndex);
+});
 
 function moveNavLiquid(index) {
   const target = navLinks[index];
@@ -19,11 +41,13 @@ function moveNavLiquid(index) {
 }
 
 const activateLink = () => {
-  const current = sections.findLast((section) => section.getBoundingClientRect().top < 180);
-  const nextIndex = Math.max(
-    0,
-    navLinks.findIndex((link) => current && link.getAttribute("href") === `#${current.id}`),
-  );
+  if (!sections.length || localPagePath !== "index.html") {
+    moveNavLiquid(activeIndex);
+    return;
+  }
+
+  const current = sections.findLast((item) => item.section.getBoundingClientRect().top < 180);
+  const nextIndex = current ? getNavIndex(current.link) : activeIndex;
   activeIndex = nextIndex;
   navLinks.forEach((link, index) => link.classList.toggle("active", index === activeIndex));
   moveNavLiquid(activeIndex);

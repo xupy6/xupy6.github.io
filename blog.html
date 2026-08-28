@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="xupy 的个人博客，记录 Agent、LLM、AI4S、全栈工程和可交互式 AI 产品思考。"
+    />
+    <title>Blog | xupy</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="site-header">
+      <a class="brand" href="./index.html#top" aria-label="xupy homepage">
+        <span class="window-dots" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+        <span>xupy</span>
+      </a>
+
+      <div class="music-box-player music-box-disabled" id="musicBox" title="音乐播放器">
+        <button class="music-control" id="prevTrack" type="button" aria-label="上一首">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button class="music-control music-control-main" id="toggleMusic" type="button" aria-label="播放">
+          <span id="playIcon" aria-hidden="true">▶</span>
+        </button>
+        <button class="music-control" id="nextTrack" type="button" aria-label="下一首">
+          <span aria-hidden="true">›</span>
+        </button>
+        <input class="music-progress" id="musicProgress" type="range" min="0" max="100" value="0" aria-label="播放进度" />
+        <span class="music-title" id="musicTitle">Music</span>
+        <span class="music-box-disc" id="musicDisc" aria-hidden="true"></span>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <span class="nav-liquid" aria-hidden="true"></span>
+        <a href="./index.html#stack">Tech Stack</a>
+        <a href="./index.html#projects">Projects</a>
+        <a class="active" href="./blog.html">Blog</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="blog-main">
+      <section class="blog-hero">
+        <div>
+          <p class="eyebrow">Blog</p>
+          <h1>Notes.</h1>
+          <p class="lead">
+            这里记录 Agent、LLM 应用、AI4S、全栈工程和可交互式 AI 产品的开发笔记。以后只要把 Markdown 放进仓库的 <code>blogs/</code> 目录并同步到 GitHub，这里会自动读取。
+          </p>
+        </div>
+        <a class="button secondary" href="./index.html">Back Home</a>
+      </section>
+
+      <section class="blog-layout">
+        <div class="blog-list glass">
+          <div class="blog-list-head">
+            <span>Posts</span>
+            <strong id="blogCount">Loading</strong>
+          </div>
+          <div id="blogList" class="blog-list-body">
+            <article class="blog-card">
+              <span>Loading</span>
+              <h2>正在读取 blogs 目录...</h2>
+              <p>如果 GitHub API 正在限流，稍等一会儿刷新即可。</p>
+            </article>
+          </div>
+        </div>
+
+        <article id="blogPost" class="blog-post-panel glass">
+          <div class="blog-empty">
+            <p class="eyebrow">Select A Post</p>
+            <h2>选择一篇文章</h2>
+            <p>左侧会自动列出 <code>blogs/</code> 目录里的 Markdown 文件。点击标题后在这里阅读全文。</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>Designed and built for xupy.</span>
+      <a href="./index.html#top">Back to home</a>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="./blog.js"></script>
+  </body>
+</html>
