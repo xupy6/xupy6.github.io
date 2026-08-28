@@ -10,11 +10,11 @@
     <title>Blog | xupy</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="blog-page">
     <div class="ambient ambient-a"></div>
     <div class="ambient ambient-b"></div>
 
-    <header class="site-header">
+    <header class="site-header blog-sidebar">
       <a class="brand" href="./index.html#top" aria-label="xupy homepage">
         <span class="window-dots" aria-hidden="true">
           <i></i><i></i><i></i>
@@ -22,45 +22,41 @@
         <span>xupy</span>
       </a>
 
-      <div class="music-box-player music-box-disabled" id="musicBox" title="音乐播放器">
-        <button class="music-control" id="prevTrack" type="button" aria-label="上一首">
-          <span aria-hidden="true">‹</span>
-        </button>
-        <button class="music-control music-control-main" id="toggleMusic" type="button" aria-label="播放">
-          <span id="playIcon" aria-hidden="true">▶</span>
-        </button>
-        <button class="music-control" id="nextTrack" type="button" aria-label="下一首">
-          <span aria-hidden="true">›</span>
-        </button>
-        <input class="music-progress" id="musicProgress" type="range" min="0" max="100" value="0" aria-label="播放进度" />
-        <span class="music-title" id="musicTitle">Music</span>
-        <span class="music-box-disc" id="musicDisc" aria-hidden="true"></span>
-      </div>
-
-      <nav class="nav" aria-label="Primary navigation">
+      <nav class="nav blog-nav" aria-label="Primary navigation">
         <span class="nav-liquid" aria-hidden="true"></span>
-        <a href="./index.html#stack">Tech Stack</a>
+        <a href="./index.html">Home</a>
         <a href="./index.html#projects">Projects</a>
         <a class="active" href="./blog.html">Blog</a>
         <a href="./index.html#contact">Contact</a>
       </nav>
+
+      <div class="blog-sidebar-foot">
+        <span>Notes</span>
+        <strong id="blogSidebarCount">--</strong>
+      </div>
     </header>
 
-    <main class="blog-main">
+    <main class="blog-main note-main">
       <section class="blog-hero">
         <div>
-          <p class="eyebrow">Blog</p>
-          <h1>Notes.</h1>
+          <p class="eyebrow">Notebook</p>
+          <h1>Notes</h1>
+          <p class="note-brief">Agent、RAG、GraphRAG、AI4S 与产品工程记录。</p>
         </div>
         <a class="button secondary" href="./index.html">Back Home</a>
       </section>
 
       <section class="blog-layout">
-        <div class="blog-list glass">
+        <div class="blog-list note-library glass">
           <div class="blog-list-head">
-            <span>Posts</span>
+            <span>Library</span>
             <strong id="blogCount">Loading</strong>
           </div>
+          <label class="blog-search">
+            <span>Search</span>
+            <input id="blogSearch" type="search" placeholder="Search notes..." autocomplete="off" />
+          </label>
+          <div class="blog-tag-filter" id="blogTagFilter" aria-label="Tag filters"></div>
           <div id="blogList" class="blog-list-body">
             <article class="blog-card">
               <span>Loading</span>
@@ -72,9 +68,9 @@
 
         <article id="blogPost" class="blog-post-panel glass">
           <div class="blog-empty">
-            <p class="eyebrow">Select A Post</p>
-            <h2>选择一篇文章</h2>
-            <p>左侧会自动列出 <code>blogs/</code> 目录里的 Markdown 文件。点击标题后在这里阅读全文。</p>
+            <p class="eyebrow">Select A Note</p>
+            <h2>选择一篇笔记</h2>
+            <p>从左侧列表选择文章，正文会在这里展开。</p>
           </div>
         </article>
       </section>
@@ -85,7 +81,6 @@
       <a href="./index.html#top">Back to home</a>
     </footer>
 
-    <script src="./script.js"></script>
     <script src="./blog.js"></script>
   </body>
 </html>
