@@ -841,8 +841,9 @@ h3 {
 
 .project-topline {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 14px;
   margin-bottom: 40px;
 }
 
@@ -853,6 +854,13 @@ h3 {
   font-size: 12px;
   font-weight: 720;
   text-transform: uppercase;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .project-topline a {

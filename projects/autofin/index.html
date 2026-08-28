@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AutoFin 数启老师，高中数学多智能体学习平台的 GitHub Pages 静态展示版。"
+    />
+    <title>AutoFin | 数启老师</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar">
+      <a class="brand" href="../../index.html#projects">
+        <span class="window-dots"><i></i><i></i><i></i></span>
+        <span>AutoFin</span>
+      </a>
+      <nav class="nav">
+        <button class="active" data-target="overview">Overview</button>
+        <button data-target="map">Knowledge</button>
+        <button data-target="agents">Agents</button>
+        <button data-target="demo">Demo</button>
+      </nav>
+      <a class="github-link" href="https://github.com/xupy6/AutoFin" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main>
+      <section class="hero panel" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">Multi-Agent Math Learning Studio</p>
+          <h1>数启老师</h1>
+          <p>
+            AutoFin 当前沉淀为高中数学多智能体学习平台，把知识点讲解、AI 答疑、拍照搜题、举一反三和错题复盘组织成学习闭环。
+          </p>
+          <div class="hero-actions">
+            <button class="primary" data-target="demo">体验静态演示</button>
+            <a class="secondary" href="../../index.html">返回主页</a>
+          </div>
+        </div>
+        <div class="math-stage">
+          <canvas id="mathCanvas"></canvas>
+          <div class="formula-strip">
+            <span>f'(x) 与单调性</span>
+            <span>向量 · 解析几何</span>
+            <span>P(A|B) 与统计</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="metric-grid">
+        <article class="metric panel">
+          <b>01</b>
+          <h2>课程地图</h2>
+          <p>按必修到选择性必修组织知识路径，先定位概念，再进入训练。</p>
+        </article>
+        <article class="metric panel">
+          <b>02</b>
+          <h2>题目诊断</h2>
+          <p>把题目拆成知识点、题型、解法步骤和常见错因。</p>
+        </article>
+        <article class="metric panel">
+          <b>03</b>
+          <h2>Agent 编排</h2>
+          <p>课程导航、讲解、归因、变式、错题复盘分别由独立 Agent 负责。</p>
+        </article>
+      </section>
+
+      <section class="section" id="map">
+        <div class="section-heading">
+          <p class="eyebrow">Knowledge Map</p>
+          <h2>高中数学知识地图</h2>
+          <p>静态展示版保留核心路径。完整 AI 讲解和后端接口请在本地启动 AutoFin。</p>
+        </div>
+        <div class="knowledge-grid" id="knowledgeGrid"></div>
+      </section>
+
+      <section class="section split" id="agents">
+        <div class="section-heading">
+          <p class="eyebrow">Agent System</p>
+          <h2>智能体分工</h2>
+        </div>
+        <div class="agent-grid" id="agentGrid"></div>
+      </section>
+
+      <section class="section demo-section" id="demo">
+        <div class="demo-panel panel">
+          <div>
+            <p class="eyebrow">Static Demo</p>
+            <h2>问数启老师</h2>
+            <p>这里是 GitHub Pages 可运行的静态兜底演示。真实 DeepSeek、多 Agent 和拍照搜题接口需要本地 Flask 后端。</p>
+          </div>
+          <textarea id="questionInput" placeholder="例如：为什么导数大于 0 可以判断函数递增？"></textarea>
+          <div class="demo-actions">
+            <button class="secondary" id="sampleBtn">填入示例</button>
+            <button class="primary" id="answerBtn">生成兜底讲解</button>
+          </div>
+          <article class="answer" id="answerBox">
+            选择一个知识点或输入问题后，可以在这里看到静态讲解示例。
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Hosted preview for xupy6.github.io</span>
+      <a href="../../index.html#projects">Back to projects</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
