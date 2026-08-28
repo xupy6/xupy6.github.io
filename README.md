@@ -15,7 +15,7 @@ xupy6 的 GitHub Pages 个人主页。
 - `script.js`：导航高亮等轻量交互
 - `blog.html` / `blog.js`：博客页面与 Markdown 渲染
 - `blogs/*.md`：博客文章
-- `projects/autofin/`：AutoFin 的 GitHub Pages 静态展示版
+- `projects/autofin/`：从 GitHub 仓库 `xupy6/AutoFin` 的 Flask 前端模板同步出的静态托管副本
 - `projects/relation-slice/`：Relation Slice 前端构建产物
 
 ## 发布
@@ -35,4 +35,4 @@ xupy6 的 GitHub Pages 个人主页。
 - AutoFin：https://xupy6.github.io/projects/autofin/
 - Relation Slice：https://xupy6.github.io/projects/relation-slice/
 
-GitHub Pages 只能托管静态前端。Relation Slice 的真实上传分析、赛博克隆、DeepSeek 调用，以及 AutoFin 的 Flask API 功能，仍需要分别启动对应项目的后端服务。
+GitHub Pages 只能托管静态前端。Relation Slice 的真实上传分析、赛博克隆、DeepSeek 调用，以及 AutoFin 的 Socket.IO / Flask API 功能，仍需要分别启动对应项目的后端服务。
